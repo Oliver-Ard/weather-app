@@ -1,0 +1,28 @@
+#weather-details .details-wrapper {
+	line-height: 1.1;
+
+	display: grid;
+	grid-template-columns: auto 1fr;
+	grid-template-areas:
+		"icon text"
+		"icon number";
+	gap: 0 1rem;
+}
+
+#weather-details .details-icon {
+	grid-area: icon;
+	align-self: center;
+
+	font-size: var(--font-size-800);
+}
+
+#weather-details .details-text {
+	grid-area: text;
+	font-weight: 600;
+}
+
+#weather-details .details-number {
+	grid-area: number;
+	font-size: var(--font-size-800);
+	font-weight: 200;
+}

@@ -3,8 +3,129 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap"
+			rel="stylesheet" />
+		<script
+			src="https://kit.fontawesome.com/1c4826088d.js"
+			crossorigin="anonymous"></script>
 		<link rel="icon" href="images/favicon.png" />
 		<title>AeroAlert</title>
 	</head>
-	<body></body>
+	<body>
+		<main id="content">
+			<!-- INFO -->
+			<section id="weather-info" class="container">
+				<div class="info-wrapper">
+					<h2 class="info-forecast" data-info="forecast">Fog</h2>
+					<h1 class="info-degree" data-info="degree">2°C</h1>
+					<img
+						class="info-weather-icon"
+						data-info="weather-icons"
+						src=""
+						alt="Weather Icon" />
+					<p class="info-location" data-info="location">Timisoara, Romania</p>
+					<p class="info-day" data-info="day">Monday, 25th</p>
+					<p class="info-hour" data-info="hour">09:53</p>
+				</div>
+				<div class="controller-wrapper">
+					<button class="display-btn" data-button="degree">
+						<i class="fa-solid fa-eye"></i> °C
+					</button>
+					<button class="display-btn" data-button="length">
+						<i class="fa-solid fa-eye"></i> km/h
+					</button>
+					<form class="location-form" data-info="form" action="#" method="post">
+						<input
+							type="text"
+							class="location-input"
+							id="location"
+							name="location"
+							placeholder="Search Location..."
+							required />
+						<i class="fa-solid fa-magnifying-glass search-icon"></i>
+					</form>
+					<p class="error-msg" data-info="error-msg">
+						Location not found! <br />
+						Lorem ipsum dolor sit amet consectetur, <br />
+						adipisicing elit. Rerum natus <br />
+					</p>
+				</div>
+			</section>
+			<!-- DETAILS -->
+			<section id="weather-details" class="container">
+				<div class="details-wrapper">
+					<i class="fa-solid fa-temperature-low details-icon"></i>
+					<span class="details-text">Feels Like</span>
+					<p class="details-number" data-details="temp">18°C</p>
+				</div>
+				<div class="details-wrapper">
+					<i class="fa-solid fa-water details-icon"></i>
+					<span class="details-text">Humidity</span>
+					<p class="details-number" data-details="humidity">67%</p>
+				</div>
+				<div class="details-wrapper">
+					<i class="fa-solid fa-cloud-rain details-icon"></i>
+					<span class="details-text">Change of Rain</span>
+					<p class="details-number" data-details="rain">0%</p>
+				</div>
+				<div class="details-wrapper">
+					<i class="fa-solid fa-wind details-icon"></i>
+					<span class="details-text">Wind Speed</span>
+					<p class="details-number" data-details="wind">16.7km/h</p>
+				</div>
+				<div class="details-wrapper">
+					<i class="fa-solid fa-sun details-icon"></i>
+					<span class="details-text">Sunrise</span>
+					<p class="details-number" data-details="sunrise">06:28</p>
+				</div>
+				<div class="details-wrapper">
+					<i class="fa-solid fa-moon details-icon"></i>
+					<span class="details-text">Sunset</span>
+					<p class="details-number" data-details="sunset">18:55</p>
+				</div>
+			</section>
+			<!-- FORECAST -->
+			<section id="weather-forecast" class="container">
+				<div class="forecast-wrapper">
+					<h3 class="forecast-day" data-forecast="day">Monday, 25th</h3>
+					<p class="forecast-max-degree" data-forecast="max-degree">22°C</p>
+					<span class="forecast-min-degree" data-forecast="min-degree"
+						>5°C</span
+					>
+					<img
+						class="forecast-icon"
+						data-forecast="icon"
+						src=""
+						alt="Forecast Icon" />
+				</div>
+				<div class="forecast-wrapper">
+					<h3 class="forecast-day" data-forecast="day">Tuesday, 26th</h3>
+					<p class="forecast-max-degree" data-forecast="max-degree">22°C</p>
+					<span class="forecast-min-degree" data-forecast="min-degree"
+						>5°C</span
+					>
+					<img
+						class="forecast-icon"
+						data-forecast="icon"
+						src=""
+						alt="Forecast Icon" />
+				</div>
+				<div class="forecast-wrapper">
+					<h3 class="forecast-day" data-forecast="day">Wednesday, 27th</h3>
+					<p class="forecast-max-degree" data-forecast="max-degree">22°C</p>
+					<span class="forecast-min-degree" data-forecast="min-degree"
+						>5°C</span
+					>
+					<img
+						class="forecast-icon"
+						data-forecast="icon"
+						src=""
+						alt="Forecast Icon" />
+				</div>
+			</section>
+		</main>
+	</body>
 </html>

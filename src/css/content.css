@@ -1,0 +1,29 @@
+#content {
+	width: min(90%, 90rem);
+	padding: 2rem 0;
+	display: grid;
+	grid-template-areas: "info details" "forecast forecast";
+	gap: 1rem;
+}
+
+#weather-info,
+#weather-details,
+#weather-forecast {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+	align-items: center;
+	gap: 2rem;
+}
+
+#weather-info {
+	grid-area: info;
+}
+
+#weather-details {
+	grid-area: details;
+}
+
+#weather-forecast {
+	grid-area: forecast;
+	gap: 5rem;
+}

@@ -1,0 +1,22 @@
+#weather-forecast .forecast-wrapper {
+	line-height: 1.1;
+
+	justify-self: center;
+}
+
+#weather-forecast .forecast-day {
+	font-size: var(--font-size-700);
+	font-weight: 300;
+	margin-bottom: 1rem;
+}
+
+#weather-forecast .forecast-max-degree {
+	font-size: var(--font-size-900);
+	font-weight: 600;
+}
+
+#weather-forecast .forecast-min-degree {
+	display: block;
+	font-size: var(--font-size-600);
+	margin-bottom: 1rem;
+}

@@ -1,0 +1,38 @@
+/* LAYOUT */
+.container {
+	background: var(--clr-overlay);
+	padding: 2rem;
+	border-radius: var(--border-radius);
+	box-shadow: var(--box-shadow);
+}
+
+.display-btn {
+	background: transparent;
+	border: 2px solid currentColor;
+	border-radius: var(--border-radius);
+	padding: 0.3em 1em;
+	margin-bottom: 0.5rem;
+
+	transition: transform 150ms ease-in-out;
+}
+
+.display-btn:focus-visible {
+	outline: none;
+	animation: scale-2 500ms forwards;
+	box-shadow: var(--button-box-shadow-light);
+}
+
+.display-btn:hover {
+	transform: scale(1.05);
+}
+
+.error-msg {
+	color: var(--clr-red);
+	font-size: var(--font-size-300);
+	display: none;
+}
+
+/* JS CLASSES */
+.error-msg.active {
+	display: block;
+}

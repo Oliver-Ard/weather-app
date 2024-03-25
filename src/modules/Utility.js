@@ -7,13 +7,32 @@ class Utility {
 	}
 
 	static formatHour(hour) {
-		const formattedHour = format(hour, "h:mm a");
+		// 24h format
+		const formattedHour = format(hour, "HH:mm");
 		return formattedHour;
 	}
 
 	static formatDay(day) {
 		const formattedDay = format(day, "iiii, do");
 		return formattedDay;
+	}
+
+	static convertHrtoMin(timeStr) {
+		// Split the time string into hours and minutes
+		const [hourStr, minuteStr] = timeStr.split(":");
+
+		// Extract the hour and minute values
+		let hour = parseInt(hourStr, 10);
+		const minute = parseInt(minuteStr, 10);
+		// Adjust the hour if it's PM (assuming 12-hour format)
+		if (timeStr.toLowerCase().includes("pm")) {
+			hour += 12;
+		}
+
+		// Calculate the total minutes past midnight
+		const totalMinutes = hour * 60 + minute;
+
+		return totalMinutes;
 	}
 
 	static showError(element, msg) {
@@ -32,6 +51,7 @@ class Utility {
 
 	static hideError(element) {
 		const msgEl = element;
+		msgEl.textContent = "";
 		msgEl.classList.remove("active");
 	}
 }

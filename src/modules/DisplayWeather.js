@@ -92,6 +92,22 @@ class DisplayWeather {
 		iconEls[1].src = objData[1].weatherIcon;
 		iconEls[2].src = objData[2].weatherIcon;
 	}
+
+	static switchBgImg(...objects) {
+		// Background image will change depending on whether it is day or night
+		const localHour = Utility.formatHour(objects[0].localTime);
+		const { sunrise, sunset } = objects[1];
+		// Convert the hours into minutes so we can see if the local time is between sunrise and sunset
+		const localHourMin = Utility.convertHrtoMin(localHour);
+		const sunriseMin = Utility.convertHrtoMin(sunrise);
+		const sunsetMin = Utility.convertHrtoMin(sunset);
+
+		if (localHourMin >= sunriseMin && localHourMin <= sunsetMin) {
+			document.body.classList.remove("night");
+		} else {
+			document.body.classList.add("night");
+		}
+	}
 }
 
 export default DisplayWeather;

@@ -5,7 +5,7 @@ class DataWeather {
 		);
 
 		if (!response.ok) {
-			throw "Location not found!";
+			throw "Location not found! Location must be in the form of 'City', 'Country' or 'City and Country'.";
 		}
 
 		const data = await response.json();

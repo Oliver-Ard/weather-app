@@ -12,10 +12,12 @@
 #weather-info .info-day,
 #weather-info .info-hour {
 	font-size: var(--font-size-500);
+	font-weight: 300;
 }
 
 #weather-info .info-weather-icon {
 	margin: 1rem 0;
+	width: 5rem;
 }
 
 #weather-info .controller-wrapper {

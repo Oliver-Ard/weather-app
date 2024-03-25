@@ -36,3 +36,7 @@
 .error-msg.active {
 	display: block;
 }
+
+.thickening {
+	font-weight: 700;
+}

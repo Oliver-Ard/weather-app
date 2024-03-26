@@ -56,11 +56,11 @@ class DisplayWeather {
 	static renderAstroInfo(objData) {
 		// SUNRISE
 		const sunriseEl = document.querySelector("[data-details = 'sunrise']");
-		sunriseEl.textContent = objData.sunrise;
+		sunriseEl.textContent = Utility.convert12hTo24h(objData.sunrise);
 
 		// SUNSET
 		const sunsetEl = document.querySelector("[data-details = 'sunset']");
-		sunsetEl.textContent = objData.sunset;
+		sunsetEl.textContent = Utility.convert12hTo24h(objData.sunset);
 	}
 
 	static renderDayForecast(objData) {

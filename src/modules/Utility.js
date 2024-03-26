@@ -35,6 +35,23 @@ class Utility {
 		return totalMinutes;
 	}
 
+	static convert12hTo24h(time12h) {
+		// Split the time string into hours, minutes, and AM/PM indicator
+		const [time, indicator] = time12h.split(" ");
+		// Split the hours and minutes
+		const [hours, minutes] = time.split(":");
+		// Convert hours to number
+		let hours24 = parseInt(hours, 10);
+		// Adjust hours for PM
+		if (indicator.toLowerCase() === "pm") {
+			hours24 += 12;
+		}
+		// Convert hours back to string and pad with leading zero if necessary
+		hours24 = hours24 < 10 ? `0${hours24}` : hours24.toString();
+		// Return the converted time string in 24-hour format
+		return `${hours24}:${minutes}`;
+	}
+
 	static showError(element, msg) {
 		const msgEl = element;
 		msgEl.classList.add("active");

@@ -7,6 +7,8 @@ function initApp() {
 
 	// EVENT LISTENERS
 	weatherForm.addEventListener("submit", Handler.handleWeatherForm);
+
+	document.addEventListener("click", Handler.handleDocumentBtns);
 	window.addEventListener("DOMContentLoaded", () => {
 		Handler.handleWeatherData("Bucharest");
 	});

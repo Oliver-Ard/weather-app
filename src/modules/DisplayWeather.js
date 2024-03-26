@@ -50,7 +50,7 @@ class DisplayWeather {
 
 		// WIND SPEED
 		const windSpeedEl = document.querySelector("[data-details = 'wind']");
-		windSpeedEl.textContent = `${objData.windKph}km/h`;
+		windSpeedEl.textContent = `${objData.windKph} km/h`;
 	}
 
 	static renderAstroInfo(objData) {
@@ -107,6 +107,48 @@ class DisplayWeather {
 		} else {
 			document.body.classList.add("night");
 		}
+	}
+
+	static switchWeatherUnits() {
+		// MAIN DEGREES
+		const degreesEl = document.querySelector("[data-info = 'degrees']");
+		degreesEl.textContent = Utility.convertTemperature(degreesEl.textContent);
+
+		// FELT TEMPERATURE
+		const feltTempEl = document.querySelector("[data-details = 'temp']");
+		feltTempEl.textContent = Utility.convertTemperature(feltTempEl.textContent);
+
+		// MAX DEGREE
+		const maxDegreeEls = document.querySelectorAll(
+			"[data-forecast = 'max-degree']"
+		);
+		maxDegreeEls[0].textContent = Utility.convertTemperature(
+			maxDegreeEls[0].textContent
+		);
+		maxDegreeEls[1].textContent = Utility.convertTemperature(
+			maxDegreeEls[1].textContent
+		);
+		maxDegreeEls[2].textContent = Utility.convertTemperature(
+			maxDegreeEls[2].textContent
+		);
+
+		// MIN DEGREE
+		const minDegreeEls = document.querySelectorAll(
+			"[data-forecast = 'min-degree']"
+		);
+		minDegreeEls[0].textContent = Utility.convertTemperature(
+			minDegreeEls[0].textContent
+		);
+		minDegreeEls[1].textContent = Utility.convertTemperature(
+			minDegreeEls[1].textContent
+		);
+		minDegreeEls[2].textContent = Utility.convertTemperature(
+			minDegreeEls[2].textContent
+		);
+
+		// WIND SPEED
+		const windSpeedEl = document.querySelector("[data-details = 'wind']");
+		windSpeedEl.textContent = Utility.convertSpeed(windSpeedEl.textContent);
 	}
 }
 

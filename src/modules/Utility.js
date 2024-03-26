@@ -52,6 +52,54 @@ class Utility {
 		return `${hours24}:${minutes}`;
 	}
 
+	static convertTemperature(degrees) {
+		const [value, unit] = degrees.split("°");
+		let convertedDegrees = parseFloat(value);
+
+		// Covert Celsius degrees into Fahrenheit degrees
+		if (unit === "C") {
+			convertedDegrees = (convertedDegrees * (9 / 5) + 32).toFixed(2);
+			const fahrenheit = `${Utility.limitDecimals(convertedDegrees)}°F`;
+			return fahrenheit;
+		}
+
+		// Covert Fahrenheit degrees into Celsius degrees
+		convertedDegrees = ((convertedDegrees - 32) / (9 / 5)).toFixed(2);
+		const celsius = `${Utility.limitDecimals(convertedDegrees)}°C`;
+		return celsius;
+	}
+
+	static convertSpeed(speed) {
+		const [value, unit] = speed.split(" ");
+		let convertedSpeed = parseFloat(value);
+
+		// Covert km/h to mph
+		if (unit === "km/h") {
+			convertedSpeed = (convertedSpeed * 0.621371).toFixed(2);
+			const mph = `${Utility.limitDecimals(convertedSpeed)} mph`;
+			return mph;
+		}
+
+		// // Covert mph to km/h
+		convertedSpeed = (convertedSpeed * 1.60934).toFixed(2);
+		const kmph = `${Utility.limitDecimals(convertedSpeed)} km/h`;
+		return kmph;
+	}
+
+	static limitDecimals(number) {
+		// Limit digits after the comma if the the second digit is a 0;
+		let newNumber = number.toString();
+		const lastChar = newNumber[newNumber.length - 1];
+
+		if (lastChar === "0") {
+			newNumber = parseFloat(newNumber).toFixed(1);
+
+			return newNumber;
+		}
+
+		return newNumber;
+	}
+
 	static showError(element, msg) {
 		const msgEl = element;
 		msgEl.classList.add("active");

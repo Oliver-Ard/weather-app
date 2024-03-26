@@ -33,6 +33,19 @@ class Handler {
 		Handler.handleWeatherData(locationInput.value);
 		locationInput.value = "";
 	}
+
+	static handleDocumentBtns(e) {
+		const { target } = e;
+		const targetParent = e.target.parentNode;
+
+		switch (target.dataset.button || targetParent.dataset.button) {
+			case "switch-units": {
+				DisplayWeather.switchWeatherUnits();
+				break;
+			}
+			// no default
+		}
+	}
 }
 
 export default Handler;

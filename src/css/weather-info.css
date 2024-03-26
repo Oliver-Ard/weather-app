@@ -54,12 +54,26 @@
 	color: currentColor;
 }
 
-#weather-info .location-input:focus-visible + .search-icon {
+#weather-info .location-input:focus-visible + .search-btn {
 	animation: scale 500ms forwards;
 }
 
-#weather-info .search-icon {
+#weather-info .search-btn {
+	background: transparent;
+	font-size: var(--font-size-500);
+	transition: transform 150ms ease-in-out;
+
 	position: absolute;
-	top: 10px;
-	right: 5px;
+	top: -3px;
+	right: 0px;
+}
+
+#weather-info .search-btn:focus-visible {
+	outline: none;
+	color: var(--clr-red);
+	animation: scale 500ms forwards;
+}
+
+#weather-info .search-btn:hover {
+	transform: scale(1.2);
 }

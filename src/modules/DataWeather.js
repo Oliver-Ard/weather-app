@@ -1,5 +1,6 @@
 class DataWeather {
 	static async fetchData(locationData) {
+		// For this project, it is ok for the API key to appear in the code, because it is a free key. Normally, it must be stored somewhere safe so that it does not appear in the code.
 		const response = await fetch(
 			`https://api.weatherapi.com/v1/forecast.json?key=75424e2741b34276a2475719242403&q=${locationData}&days=3&aqi=no&alerts=no`
 		);

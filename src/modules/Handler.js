@@ -7,6 +7,7 @@ class Handler {
 
 	static async handleWeatherData(fetchedData) {
 		try {
+			Utility.showSpinner();
 			const location = await DataWeather.getLocation(fetchedData);
 			DisplayWeather.renderLocationInfo(location);
 
@@ -21,8 +22,10 @@ class Handler {
 
 			DisplayWeather.switchBgImg(location, astroInfo);
 			Utility.hideError(this.errorMsgEl);
+			Utility.hideSpinner();
 		} catch (error) {
 			Utility.showError(this.errorMsgEl, error);
+			Utility.hideSpinner();
 		}
 	}
 

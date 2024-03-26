@@ -119,6 +119,16 @@ class Utility {
 		msgEl.textContent = "";
 		msgEl.classList.remove("active");
 	}
+
+	static showSpinner() {
+		const spinner = document.querySelector("[data-info = 'loading-spinner']");
+		spinner.classList.add("active");
+	}
+
+	static hideSpinner() {
+		const spinner = document.querySelector("[data-info = 'loading-spinner']");
+		spinner.classList.remove("active");
+	}
 }
 
 export default Utility;
